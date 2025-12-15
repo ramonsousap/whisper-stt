@@ -17,7 +17,7 @@ RUN python3 -m pip install --upgrade pip
 RUN pip install torch==1.13.1+cu116 torchaudio==0.13.1+cu116 \
     --extra-index-url https://download.pytorch.org/whl/cu116
 
-RUN pip install numpy==1.23.5 openai-whisper fastapi uvicorn
+RUN pip install numpy==1.23.5 python-multipart openai-whisper fastapi uvicorn
 
 WORKDIR /app
 COPY app /app
