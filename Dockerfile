@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.8.0-runtime-ubuntu22.04
+FROM nvidia/cuda:11.6.2-runtime-ubuntu22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -7,9 +7,9 @@ RUN apt update && apt install -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --no-cache-dir \
-    torch==2.1.0+cu118 \
-    torchaudio==2.1.0+cu118 \
-    -f https://download.pytorch.org/whl/cu118 \
+    torch==1.13.1+cu116 \
+    torchaudio==0.13.1+cu116 \
+    -f https://download.pytorch.org/whl/cu116 \
     openai-whisper fastapi uvicorn
 
 WORKDIR /app
