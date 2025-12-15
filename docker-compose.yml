@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  whisper:
+    build: .
+    container_name: whisper-stt
+    restart: unless-stopped
+    runtime: nvidia
+    ports:
+      - 10300:10300
+    environment:
+      NVIDIA_VISIBLE_DEVICES: GPU-c4ad843f-1359-c88a-bdd2-ba864935c680
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+    volumes:
+      - /tank/dados/llm-voip/whisper/models:/root/.cache/whisper
